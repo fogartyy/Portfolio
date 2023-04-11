@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-middle-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  --hover-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-middle-rgb: 25, 25, 25;
+    --background-end-rgb: 50, 50, 50;
+    --hover-color: #646464;
+  }
+}
+
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(150deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-middle-rgb)) 50%, rgb(var(--background-end-rgb)) 100%);
+  width: 70%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+
+
+.hero button{
+  background-color: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-start-rgb));
+  padding: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  
+}
+
+
+.navbar{
+  color: rgb(var(--foreground-rgb));
+  margin-top: 10px;
+}
+
+.navbar-menu{
+  float: right;
+}
+
+.navbar-brand{
+  display: inline-block;
+  padding: 1rem 1rem;
+}
+
+.navbar-menu{
+  display: inline-block;
+}
+
+.navbar-item{
+  display: inline-block;
+  padding: 1rem 1rem;
+  min-width: 50px;
+  margin-left: 5px;
+
+  text-align: center;
+}
+
+.navbar-item:hover{
+  color: var(--hover-color);
+  background-color: rgb(var(--foreground-rgb));
+  transition: 0.1s; 
+}
+
+.hero{
+
+  color: rgb(var(--foreground-rgb));
+  padding-top: 1em;
+
+  height: 80vh;
+}
+
+.hero .title{
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.hero .subtitle{
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.hero img{
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.paralax{
+  background-attachment:local;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:url("/images/Kyle.jpg");
+}
+
+.rounded, .navbar-item{
+  border-radius: 10px;
+
+}
+
+.shadow{
+  box-shadow: 0px 0px 28px 1px rgba(0,0,0,0.75);
+}
+
+
+
