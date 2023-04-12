@@ -23,7 +23,7 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --inactive-rgb: 100, 100, 100;
-    --background-start-rgb: 20, 20, 20;
+    --background-start-rgb: 50, 50, 50;
     --background-middle-rgb: 75, 75, 75;
     --background-end-rgb: 50, 50, 50;
     --hover-color: #646464;
@@ -52,6 +52,9 @@ body {
 .gradient{
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
   from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+
+  mask-image: gradient(linear, left top, left bottom, 
+  from(rgba(0,0,0,0)), to(rgba(0,0,0,0)));
 }
 /*background: linear-gradient(145deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-end-rgb)) 100%);*/
 
@@ -82,6 +85,8 @@ body {
   padding-left: 15%;
   padding-right: 15%;
   z-index: 10;
+  border-bottom-left-radius: 10px;
+  
 }
 
 .navbar-menu{
@@ -135,6 +140,9 @@ position: relative;
 .hero img{
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  mask: url("/images/Hero-Mask.png");
+  mask-size: contain;
+  mask-repeat: no-repeat;
 }
 
 .hero-img{
@@ -248,10 +256,43 @@ position: relative;
   top: 0;
   left: 0;
   z-index: -1;
-  opacity: 0.05;
+  opacity: 0.2;
 
 }
 
+
+.social-button{
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  color: rgb(var(--background-start-rgb));
+  text-align: center;
+  background-color: rgb(var(--foreground-rgb));
+  border-radius: 50%;
+  vertical-align: bottom;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.social-button svg{
+  font-size: 30px;
+  position: absolute;
+
+}
+
+
+
+.social-button:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.social-button:active{
+  transform: scale(0.9);
+  transition: 0.2s;
+}
 
 
 
