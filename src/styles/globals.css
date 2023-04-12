@@ -104,7 +104,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image:url("/images/Kyle.jpg");
 }
 
 .rounded, .navbar-item{
