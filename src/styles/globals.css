@@ -211,7 +211,7 @@ position: relative;
 
 
 .scroll-point h2{
-  color: white;
+  color: rgb(var(--foreground-rgb));
   position: absolute;
   transform: translate(0, -45%);
   display: inline-block;
