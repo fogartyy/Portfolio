@@ -4,9 +4,13 @@
 import { useEffect } from 'react';
 
 //scroll component
-function JumpTo(anchor){
-    document.getElementById(anchor).scrollIntoView({behavior: "smooth"});
-}
+function JumpTo(anchor: any) {
+    const element = document.getElementById(anchor);
+    if (element) {
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  }
+  
     
 
 const ScrollPoint = (props: any) => {
