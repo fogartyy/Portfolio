@@ -1,5 +1,7 @@
 //hero with text button and image
 
+import { url } from "inspector";
+
 
 //function
 const Hero = () => {
@@ -13,7 +15,7 @@ const Hero = () => {
                     <br></br>
                     <button className="button">Download Resume</button>
                 </div>
-                <div className="paralax rounded col-start-8 col-span-12 row-start-1 row-span-6 shadow" style={{backgroundImage:`url("/images/Kyle.jpg")`}}>
+                <div className="paralax rounded col-start-8 col-span-12 row-start-1 row-span-6 shadow" style={{backgroundImage: "url('/images/Kyle.jpg')"}}>
 
                 </div>
             </div>
