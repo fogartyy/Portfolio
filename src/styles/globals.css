@@ -8,26 +8,52 @@
   --background-middle-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
   --hover-color: #ffffff;
+
+  
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+}
+
+::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-middle-rgb: 25, 25, 25;
+    --inactive-rgb: 100, 100, 100;
+    --background-start-rgb: 20, 20, 20;
+    --background-middle-rgb: 75, 75, 75;
     --background-end-rgb: 50, 50, 50;
     --hover-color: #646464;
   }
 }
 
 body {
-  background: rgb(2,0,36);
-  background: linear-gradient(150deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-middle-rgb)) 50%, rgb(var(--background-end-rgb)) 100%);
-  width: 70%;
-  margin: 0 auto;
+  margin: 0;
+  width: 100%;
+  
   min-height: 100vh;
+  background-color: rgb(var(--background-start-rgb));
 }
 
+.content-margin{
+  padding-left: 15%;
+  padding-right: 15%;
+} 
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.gradient{
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+  from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+/*background: linear-gradient(145deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-end-rgb)) 100%);*/
 
 
 .hero button{
@@ -41,13 +67,25 @@ body {
 }
 
 
+.hero-opacity{
+  opacity: 0.5;
+}
+
+
 .navbar{
+  padding: 10px;
   color: rgb(var(--foreground-rgb));
-  margin-top: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  z-index: 10;
 }
 
 .navbar-menu{
-  float: right;
+ float: right;
 }
 
 .navbar-brand{
@@ -77,8 +115,8 @@ body {
 .hero{
 
   color: rgb(var(--foreground-rgb));
-  padding-top: 1em;
-
+  padding-top: 8em;
+position: relative;
   height: 80vh;
 }
 
@@ -99,12 +137,21 @@ body {
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
 
-.paralax{
+.hero-img{
   background-attachment:local;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+.paralax{
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .rounded, .navbar-item{
   border-radius: 10px;
@@ -114,6 +161,98 @@ body {
 .shadow{
   box-shadow: 0px 0px 28px 1px rgba(0,0,0,0.75);
 }
+
+
+.scroll{
+  height: 50vh;
+  width: 5px;
+  border-radius: 50px;
+  background-color: white;
+  position: fixed;
+  left: 3.75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  mask-composite: subtract;
+}
+
+.scroll-bar{
+  height: 0;
+  width: 100%;
+  border-radius: 50px;
+  background-color: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  
+}
+
+.scroll-point{
+  position: absolute;
+  left: 50%;
+  width: fit-content;
+}
+
+.scroll-point:hover h2, .scroll-point:hover{
+  cursor: pointer;
+  opacity: 1;
+  
+}
+
+.scroll-point:hover{
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.scroll-point:active{
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
+
+.scroll-point h2{
+  color: rgb(var(--foreground-rgb));
+  position: absolute;
+  transform: translate(0, -45%);
+  display: inline-block;
+  width: max-content;
+  padding: 10px;
+  left: 5px;
+  transition: 0.2s;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+
+
+.scroll-point-dot{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  background-color: rgb(var(--foreground-rgb));
+}
+
+.scroll-point:hover{
+  color: black;
+}
+
+
+.background{
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.05;
+
+}
+
+
 
 
 
