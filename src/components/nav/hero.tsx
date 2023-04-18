@@ -7,8 +7,8 @@ import SocialPanel from "../social-panel";
 const Hero = () => {
     return (
         <div className="hero" style={{width:"100%", zIndex:1}}>
-            <div className="grid grid-cols-12 grid-rows-6 h-full">  
-                <div className="col-start-1 col-span-7 row-start-1 row-span-4">
+            <div className="grid lg:grid-cols-2 lg:grid-rows-1 h-full gap-5">  
+                <div className="">
                     <h2 className="subtitle">HELLO MY NAME IS</h2>
                     <h1 className="title">Kyle Fogarty-Anderson</h1>
                     <h2 className="subtitle">I am a Full Stack Developer</h2>
@@ -16,10 +16,15 @@ const Hero = () => {
                     <button className="button">Download Resume</button>
                 </div>
 
-                <div className="col-start-1 col-span-7"><SocialPanel></SocialPanel></div>
-                <img className="hero-img rounded col-start-8 col-span-12 row-start-1 row-span-6 shadow" src="/images/Kyle.jpg">
+                
+                <img className="hero-img rounded shadow m-auto" src="/images/Kyle.jpg">
 
                 </img>
+
+                <div className="row-start-2"><SocialPanel></SocialPanel></div>
+
+                
+
             </div>
         </div>
     )
